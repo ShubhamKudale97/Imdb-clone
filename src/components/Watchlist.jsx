@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import genreids from "../Utility/genre";
+import { WatchlistContext } from "../context/WatchlistContext";
 
-function Watchlist({ watchList, setWatchList, handleRemoveFromWatchlist }) {
+function Watchlist() {
   const [search, setSearch] = useState("");
   const [genreList, setGenreList] = useState(["All Genres"]);
   const [curGenre, setCurGenre] = useState("All Genres");
+
+  const { watchList, setWatchList, handleRemoveFromWatchlist } = useContext(WatchlistContext);
 
   let handleSearch = (e) => {
     setSearch(e.target.value);

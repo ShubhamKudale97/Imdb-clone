@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import MovieCard from "./MovieCard";
 import axios from "axios";
 import Pagination from "./Pagination";
+import { WatchlistContext } from "../context/WatchlistContext";
 
-function Movies({ handleWatchlist, handleRemoveFromWatchlist, watchList }) {
+function Movies() {
   const [Movies, setMovies] = useState([]);
   const [pageNo, setPageNo] = useState(1);
+
+  const { watchList, handleWatchlist, handleRemoveFromWatchlist } = useContext(WatchlistContext);
 
   const apiKey = import.meta.env.VITE_TMDB_API_KEY;  // Vite expects your env variables should starts with VITE
   
