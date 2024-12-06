@@ -1,5 +1,5 @@
 import React from 'react'
-import clapboard from '../clapboard.png'
+import clapboard from '../assets/clapboard.png'
 
 import { Link } from 'react-router-dom'
 
